@@ -1,36 +1,35 @@
-import React from 'react';
-import Navbar from './components/Navbar';
-import Header from './components/Header';
-import About from './components/About';
-import Footer from './components/Footer';
+import React, { useState } from "react";
+import Navbar from "./components/Navbar";
+import Header from "./components/Header";
+import About from "./components/About";
+import Footer from "./components/Footer";
 
-const App = () => (
-  <div className="bg-gray-300 text-white pb-10">
-    <div className="container sm:w-[1200px] m-auto overflow-hidden">
-      <Navbar />
+const App = () => {
+  const [theme, setTheme] = useState("light"); // Default theme is 'light'
 
-      {/* Outer Div with height 210vh */}
-      <div className="h-fit-content w-full bg-white rounded-b-[50px] flex flex-col justify-between">
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  };
 
-        {/* Inner Div with height 150vh */}
-        <div className="h-fit-content w-full bg-gray-800 rounded-b-[50px]">
-
-          {/* Split Header and About Section */}
-          <div >
-            <Header />
+  return (
+    <div className={`bg-gray-300 text-white pb-10 `}>
+      <div className="container sm:w-[1200px] m-auto overflow-hidden">
+      
+        <div className={`h-fit-content w-full rounded-b-[50px] flex flex-col justify-between ${theme === "light" ? "bg-white border-4 border-white " : "bg-gray-700 border-4 border-white"}`}>
+         
+          <div className={`h-fit-content w-full rounded-b-[50px] ${theme === "light" ? "bg-gray-800 border-b-4 border-white" : "bg-white border-b-4 border-white"}`}>
+            <Navbar theme={theme} toggleTheme={toggleTheme} />
+            <Header theme={theme} />
+            <About theme={theme} />
           </div>
-          <div>
-            <About />
+          <div className="h-[calc(fit-content-fit-content)] w-full">
+            <Footer theme={theme} toggleTheme={toggleTheme}/>
           </div>
         </div>
-
-        {/* Footer (remaining height) */}
-        <div className="h-[calc(fit-content-fit-content)] w-full">
-          <Footer />
-        </div>
+        
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default App;

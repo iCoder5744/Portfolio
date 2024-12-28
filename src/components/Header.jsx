@@ -1,25 +1,24 @@
 import React, { useState } from "react";
 
-const NestedDivs = () => {
+const Header = ({ theme }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false); // Declare state for popup
 
   return (
     <div>
       {/* Header Div with height 85vh and full width */}
-      <header className="h-[85vh] w-full bg-gray-200 rounded-b-[50px] flex flex-col items-center justify-center text-center">
+      <header className={`h-[85vh] w-full  rounded-b-[50px] flex flex-col items-center justify-center text-center ${theme === "light" ? "bg-white text-gray-800 border-b-4 border-white" : "bg-gray-700 text-white border-b-4 border-white"}`}>
         <img
           src="/images/profile.jpg"
           alt="profile"
           className="w-56 h-56 object-cover rounded-full text-black bg-white mb-4"
         />
-        <h1 className="text-3xl sm:text-5xl font-bold text-gray-700">
+        <h1 className={`text-3xl sm:text-5xl font-bold ${theme === "light" ? "text-gray-700" : "text-white"}`}>
           Building Creative and <br />
           Scalable Web Applications
         </h1>
         <button
           onClick={() => setIsPopupOpen(true)} // Open popup on button click
-          className="mt-6 px-6 py-3 bg-green-500 text-black font-semibold rounded-full shadow-2xl border border-black"
-        >
+          className={`mt-6 px-6 py-3 bg-green-500 font-semibold rounded-full shadow-sm ${theme === "light" ? "border-2 border-gray-700 text-black" : "border-4 border-white text-gray-700"}`}>
           Contact Me
         </button>
       </header>
@@ -46,8 +45,8 @@ const NestedDivs = () => {
                   id="name"
                   placeholder="Enter your name"
                   className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-green-500"
-                />
-              </div>
+                />              
+              </div>            
               <div>
                 <label className="block text-gray-600 mb-1" htmlFor="email">
                   Email
@@ -84,4 +83,4 @@ const NestedDivs = () => {
   );
 };
 
-export default NestedDivs;
+export default Header;

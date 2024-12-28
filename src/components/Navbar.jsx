@@ -1,27 +1,34 @@
-// React Icons
-import { WiDayCloudy } from "react-icons/wi";
+import React from "react";
 import { IoMdCloudyNight } from "react-icons/io";
 
-const Navbar = () => {
+const Navbar = ({ theme, toggleTheme }) => {
   return (
-    // Navbar
-    <div className="flex w-full justify-between items-center px-4 sm:px-10 py-3 bg-gray-100 shadow-lg">
+    <div className={`flex w-full justify-between items-center px-4 sm:px-10 py-3 ${theme === "light" ? "bg-white text-black border-b border-gray-300" : "bg-gray-700 text-white border-b border-gray-600"} shadow-2xl `}>
       {/* Mode Toggle */}
-      <div className="flex space-x-4 px-3 py-1 bg-gray-200 rounded-3xl shadow-inner">
-        <button className="px-2 py-2 bg-gray-100 rounded-full text-black">
-          <WiDayCloudy />
-        </button>
-        <button className="px-2 py-2 bg-gray-100 rounded-full text-black">
+      <div
+        className={`px-2 py-1 flex text-2xl rounded-full border shadow-inner ${theme === "light" ? "text-black border-gray-800" : "text-white border-gray-200"
+          }`}
+      >
+        <button onClick={toggleTheme}>
           <IoMdCloudyNight />
         </button>
       </div>
 
+
       {/* Navigation Links */}
-      <ul className="flex list-none text-gray-900 font-bold space-x-5">
-        <li className="border border-gray-500 hover:text-gray-300 shadow-inner px-4 py-1 rounded-full">
-          <a href="#home" className="text-gray-500 hover:text-gray-700">
+      <ul className="list-none font-medium">
+        <li>
+          <a
+            href="/Resume.pdf"
+            download="Shivam_Yadav_Resume.pdf"
+            className={`px-4 py-2 rounded-full shadow-inner font-medium border-2 ${theme === "light"
+                ? "text-black hover:text-gray-500 border-gray-800  hover:border-gray-500"
+                : "text-gray-200 hover:text-white border-gray-200  hover:border-white"
+              }`}
+          >
             Resume
           </a>
+
         </li>
       </ul>
     </div>

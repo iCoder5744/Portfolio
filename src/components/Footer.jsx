@@ -1,9 +1,13 @@
 import React from "react";
 import { FaInstagram, FaTelegram, FaWhatsapp } from "react-icons/fa";
 
-const Footer = () => (
-  
-    <footer className="p-10 flex flex-col items-center justify-center text-center bg-white rounded-b-[50px]">
+const Footer = ({ theme }) => {
+  return (
+    <footer
+      className={`p-10 flex flex-col items-center justify-center text-center rounded-b-[50px] ${
+        theme === "light" ? "bg-white text-gray-800" : "bg-gray-700 text-white"
+      }`}
+    >
       {/* Handshake Icon */}
       <div className="mb-4">
         <img
@@ -14,16 +18,22 @@ const Footer = () => (
       </div>
 
       {/* Title */}
-      <h2 className="text-3xl sm:text-4xl font-bold text-black mb-4">
+      <h2 className="text-3xl sm:text-4xl font-bold mb-4">
         Stay Connected for Updates and <br className="hidden sm:block" /> Exciting Opportunities!
       </h2>
 
       {/* Email Form */}
-      <form className="bg-gray-800 rounded-full flex items-center mt-4 w-full max-w-lg">
+      <form
+        className={`rounded-full flex items-center justify-center mt-4 sm:w-full max-w-lg ${
+          theme === "light" ? "bg-gray-200 border" : "bg-gray-700 border"
+        }`}
+      >
         <input
           type="email"
           placeholder="Enter your email"
-          className="flex-1 px-4 py-3 rounded-l-full bg-gray-800 text-white placeholder-gray-300 focus:outline-none"
+          className={`flex-1 px-4 py-3 rounded-l-full focus:outline-none ${
+            theme === "light" ? "bg-gray-700 placeholder-gray-300 " : "bg-gray-600 placeholder-white "
+          }`}
         />
         <button
           type="submit"
@@ -34,12 +44,16 @@ const Footer = () => (
       </form>
 
       {/* Social Media Links */}
-      <div className="mt-10 text-sm text-gray-500 w-full">
+      <div className="mt-10 text-sm w-full">
         <p className="text-base">© 2024 Shivam Yadav</p>
         <div className="flex justify-center items-center space-x-6 mt-4">
           <a
             href="#"
-            className="hover:text-black text-gray-500 flex items-center"
+            className={`flex items-center ${
+              theme === "light"
+                ? "text-gray-800 hover:text-black"
+                : "text-gray-400 hover:text-white"
+            }`}
             aria-label="Instagram"
           >
             <FaInstagram size="20" className="mr-2" />
@@ -47,7 +61,11 @@ const Footer = () => (
           </a>
           <a
             href="#"
-            className="hover:text-black text-gray-500 flex items-center"
+            className={`flex items-center ${
+              theme === "light"
+                ? "text-gray-800 hover:text-black"
+                : "text-gray-400 hover:text-white"
+            }`}
             aria-label="Telegram"
           >
             <FaTelegram size="20" className="mr-2" />
@@ -55,7 +73,11 @@ const Footer = () => (
           </a>
           <a
             href="#"
-            className="hover:text-black text-gray-500 flex items-center"
+            className={`flex items-center ${
+              theme === "light"
+                ? "text-gray-800 hover:text-black"
+                : "text-gray-400 hover:text-white"
+            }`}
             aria-label="WhatsApp"
           >
             <FaWhatsapp size="20" className="mr-2" />
@@ -64,6 +86,7 @@ const Footer = () => (
         </div>
       </div>
     </footer>
-);
+  );
+};
 
 export default Footer;

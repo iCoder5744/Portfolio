@@ -6,7 +6,7 @@ const Header = ({ theme }) => {
   return (
     <div>
       {/* Header Div with height 85vh and full width */}
-      <header className={`h-[85vh] w-full  rounded-b-[50px] flex flex-col items-center justify-center text-center ${theme === "light" ? "bg-white text-gray-800 border-b-4 border-white" : "bg-gray-700 text-white border-b-4 border-white"}`}>
+      <header className={`py-20 lg:py-24 h-fit-content overflow-auto w-full  rounded-b-[50px] flex flex-col items-center justify-center text-center ${theme === "light" ? "bg-white text-gray-800 border-b-4 border-white" : "bg-gray-700 text-white border-b-4 border-white"}`}>
         <img
           src="/images/profile.jpg"
           alt="profile"

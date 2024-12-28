@@ -19,7 +19,7 @@ const App = () => {
          
           <div className={`h-fit-content w-full rounded-b-[50px] ${theme === "light" ? "bg-gray-800 border-b-4 border-white" : "bg-white border-b-4 border-white"}`}>
             <Navbar theme={theme} toggleTheme={toggleTheme} />
-            <Header theme={theme} />
+              <Header theme={theme} />            
             <About theme={theme} />
           </div>
           <div className="h-[calc(fit-content-fit-content)] w-full">

@@ -4,9 +4,8 @@ import { FaInstagram, FaTelegram, FaWhatsapp } from "react-icons/fa";
 const Footer = ({ theme }) => {
   return (
     <footer
-      className={`p-10 flex flex-col items-center justify-center text-center rounded-b-[50px] ${
-        theme === "light" ? "bg-white text-gray-800" : "bg-gray-700 text-white"
-      }`}
+      className={`p-10 flex flex-col items-center justify-center text-center rounded-b-[50px] ${theme === "light" ? "bg-white text-gray-800" : "bg-gray-700 text-white"
+        }`}
     >
       {/* Handshake Icon */}
       <div className="mb-4">
@@ -24,16 +23,14 @@ const Footer = ({ theme }) => {
 
       {/* Email Form */}
       <form
-        className={`rounded-full flex items-center justify-center mt-4 sm:w-full max-w-lg ${
-          theme === "light" ? "bg-gray-200 border" : "bg-gray-700 border"
-        }`}
+        className={`rounded-full flex items-center justify-center mt-4 sm:w-full max-w-lg ${theme === "light" ? "bg-gray-200 border" : "bg-gray-700 border"
+          }`}
       >
         <input
           type="email"
           placeholder="Enter your email"
-          className={`flex-1 px-4 py-3 rounded-l-full focus:outline-none ${
-            theme === "light" ? "bg-gray-700 placeholder-gray-300 " : "bg-gray-600 placeholder-white "
-          }`}
+          className={`flex-1 px-4 py-3 rounded-l-full focus:outline-none ${theme === "light" ? "bg-gray-700 placeholder-gray-300 " : "bg-gray-600 placeholder-white "
+            }`}
         />
         <button
           type="submit"
@@ -48,36 +45,39 @@ const Footer = ({ theme }) => {
         <p className="text-base">© 2024 Shivam Yadav</p>
         <div className="flex justify-center items-center space-x-6 mt-4">
           <a
-            href="#"
-            className={`flex items-center ${
-              theme === "light"
-                ? "text-gray-800 hover:text-black"
-                : "text-gray-400 hover:text-white"
-            }`}
+            href="https://www.instagram.com/_c_vam/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`flex items-center ${theme === "light"
+              ? "text-gray-800 hover:text-black"
+              : "text-gray-400 hover:text-white"
+              }`}
             aria-label="Instagram"
           >
             <FaInstagram size="20" className="mr-2" />
             Instagram
           </a>
           <a
-            href="#"
-            className={`flex items-center ${
-              theme === "light"
+            href="https://t.me/ShivamIcoder" // Replace with your actual username
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`flex items-center ${theme === "light"
                 ? "text-gray-800 hover:text-black"
                 : "text-gray-400 hover:text-white"
-            }`}
+              }`}
             aria-label="Telegram"
           >
             <FaTelegram size="20" className="mr-2" />
             Telegram
           </a>
           <a
-            href="#"
-            className={`flex items-center ${
-              theme === "light"
-                ? "text-gray-800 hover:text-black"
-                : "text-gray-400 hover:text-white"
-            }`}
+            href="https://wa.me/919876543210" // Replace with your phone number
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`flex items-center ${theme === "light"
+              ? "text-gray-800 hover:text-black"
+              : "text-gray-400 hover:text-white"
+              }`}
             aria-label="WhatsApp"
           >
             <FaWhatsapp size="20" className="mr-2" />
@@ -85,6 +85,7 @@ const Footer = ({ theme }) => {
           </a>
         </div>
       </div>
+
     </footer>
   );
 };

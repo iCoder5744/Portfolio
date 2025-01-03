@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const Header = ({ theme }) => {
   const [isFormOpen, setIsFormOpen] = useState(false);
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -20,6 +21,7 @@ const Header = ({ theme }) => {
       setTimeout(() => {
         alert("Message sent successfully!");
         setIsSubmitting(false);
+        setName("");
         setEmail("");
         setMessage("");
         setIsFormOpen(false);
@@ -87,6 +89,15 @@ const Header = ({ theme }) => {
             <h2 className="text-xl font-bold text-center mb-2">Contact Me</h2>
 
             <form onSubmit={handleSubmit} className="text-gray-600 shadow-lg space-y-4">
+              <input
+                type="text"
+                name="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Your Name"
+                required
+                className="w-full px-4 py-2 border-2 border-gray-300 outline-none rounded"
+              />
               <input
                 type="email"
                 name="email"

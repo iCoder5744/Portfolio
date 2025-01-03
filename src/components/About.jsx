@@ -5,12 +5,12 @@ const About = ({ theme }) => {
 
   return (
     <section
-      className={`about-section rounded-b-[50px] mb-2 lg:mb-0 p-3  sm:p-6 lg:flex lg:space-x-8 ${
+      className={` rounded-b-[50px] mb-2 p-3 sm:py-4 lg:flex lg:space-x-4 ${
         isLightTheme ? "bg-gray-800 text-white" : "bg-white text-gray-700"
       }`}
     >
       {/* About Me Section */}
-      <div className="about-me w-full lg:w-1/2 space-y-2">
+      <div className=" w-full lg:w-1/2 space-y-2">
         <h2 className="about-title text-3xl sm:text-4xl font-bold">
           Hello, I'm <br />
           <span className="about-highlight text-green-400">Shivam Yadav!</span>
@@ -47,14 +47,14 @@ const About = ({ theme }) => {
 
       {/* Skills Section */}
       <div
-        className={`skills-section w-full lg:w-1/2 mt-4 border p-2 rounded-xl ${
+        className={`skills-section w-full  lg:w-1/2 mt-6 lg:mt-0 border py-2 px-4 rounded-xl ${
           isLightTheme ? "bg-gray-100 text-gray-800" : "bg-gray-700 text-white"
         }`}
       >
         <h3 className="skills-title text-3xl font-semibold mb-4 lg:mb-6 text-center lg:text-left">
           My Skills
         </h3>
-        <div className="skills-container py-6  flex flex-wrap gap-4 justify-around lg:justify-center lg:gap-y-12">
+        <div className="skills-container py-4  flex flex-wrap gap-4 justify-around lg:justify-between lg:gap-y-12">
           {/* Skill Badges */}
           <SkillBadge skill="HTML" color="bg-green-500" />
           <SkillBadge skill="CSS" color="bg-blue-500" />
@@ -62,6 +62,7 @@ const About = ({ theme }) => {
           <SkillBadge skill="JavaScript" color="bg-yellow-500" />
           <SkillBadge skill="React.js" color="bg-teal-500" />
           <SkillBadge skill="Node.js" color="bg-indigo-500" />
+          <SkillBadge skill="Firebase" color="bg-indigo-500" />        
           <SkillBadge skill="MongoDB" color="bg-red-500" />
           <SkillBadge skill="REST APIs" color="bg-purple-500" />
         </div>

@@ -13,8 +13,8 @@ const Navbar = ({ theme, toggleTheme }) => {
       {/* Theme Toggle */}
       <button
         onClick={toggleTheme}
-        className={`theme-toggle px-2 py-1 text-2xl rounded-full shadow-inner border-2 ${
-          isLightTheme ? "text-black border-gray-800" : "text-white border-gray-200"
+        className={`theme-toggle px-1 sm:px-2 sm:py-1 text-2xl rounded-full shadow-inner border-2 ${
+          isLightTheme ? "text-gray-600 border-gray-600" : "text-white border-gray-200"
         }`}
         aria-label="Toggle Theme"
       >
@@ -22,11 +22,11 @@ const Navbar = ({ theme, toggleTheme }) => {
       </button>
 
       {/* Navigation Links */}
-      <ul className="nav-links flex-grow flex justify-center space-x-4 pl-10 ">
+      <ul className="nav-links  flex-auto flex justify-center space-x-2 md:space-x-4 pl-10 ">
         <li>
           <a
             href="https://www.linkedin.com/in/shivam-yadav-b97159320/"
-            className={`nav-link font-light tracking-wider ${
+            className={`nav-lin text-[14px] sm:text-[16px]  font-light md:tracking-wider ${
               isLightTheme ? "text-black hover:text-gray-500" : "text-gray-200 hover:text-white"
             }`}
           >
@@ -36,7 +36,7 @@ const Navbar = ({ theme, toggleTheme }) => {
         <li>
           <a
             href="https://github.com/iCoder5744"
-            className={`nav-link font-light tracking-widest ${
+            className={`nav-link text-[14px] sm:text-[16px] font-light md:tracking-widest ${
               isLightTheme ? "text-black hover:text-gray-500" : "text-gray-200 hover:text-white"
             }`}
           >
@@ -49,9 +49,9 @@ const Navbar = ({ theme, toggleTheme }) => {
       <a
         href="/Resume.pdf"
         download="Shivam_Yadav_Resume.pdf"
-        className={`resume-btn px-3 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm rounded-full shadow-inner font-medium border-2 ${
+        className={`resume-btn px-2 py-1 sm:px-3 sm:py-1 text-xs sm:text-sm rounded-full shadow-inner font-medium border-2 ${
           isLightTheme
-            ? "text-black hover:text-gray-500 border-gray-800 hover:border-gray-500"
+            ? "text-gray-600 hover:text-gray-500 border-gray-600 hover:border-gray-500"
             : "text-gray-200 hover:text-white border-gray-200 hover:border-white"
         }`}
       >

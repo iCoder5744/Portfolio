@@ -22,22 +22,7 @@ const Footer = ({ theme }) => {
         Stay Connected for Updates and <br className="hidden sm:block" /> Exciting Opportunities!
       </h2>
 
-      {/* Email Form */}
-      <form
-        className={`email-form rounded-full flex items-center justify-center mt-4 sm:w-full max-w-lg ${isLightTheme ? "bg-gray-200 border" : "bg-gray-700 border"}`}
-      >
-        <input
-          type="email"
-          placeholder="Enter your email"
-          className={`email-input flex-1 px-4 py-3 rounded-l-full focus:outline-none ${isLightTheme ? "bg-gray-700 placeholder-gray-300" : "bg-gray-600 placeholder-white"}`}
-        />
-        <button
-          type="submit"
-          className="email-submit px-6 py-3 bg-green-500 text-black font-semibold rounded-r-full hover:bg-green-600 transition duration-300"
-        >
-          &#10140;
-        </button>
-      </form>
+      
 
       {/* Social Media Links */}
       <div className="social-links mt-10 text-sm w-full">
